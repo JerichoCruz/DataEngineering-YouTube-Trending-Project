@@ -99,7 +99,7 @@ WHERE id=2;
                 - source = name or indicator of source
                 - source_region = region of data source
         - In our case, the bucket name is: **deproject-on-youtube-raw-useast1-dev/**
-3.   . Copy the data to S3, using our [AWS S3 CLI commands](bash/s3_cli_command.sh)
+3. Copy the data to S3, using our [AWS S3 CLI commands](bash/s3_cli_command.sh)
 
 
 # Repository Structure
@@ -123,7 +123,7 @@ WHERE id=2;
     - s3://deproject-on-youtube-raw-useast1-dev/youtube/raw_statistics_reference_data/
 5. Use Athena and [SQL](athena/test_query.sql) to query data
 6. Solve any errors during preprocessing
-7. Configure desired schema changes
+7. Configure desired schema changes in Glue console
 8. Write ETL job in [Lambda](lambda/lambda_function.py), and clean data    
     - Set target to cleansed S3 bucket (Cleansed / Enriched)
     - Add trigger to this function so that this runs when a new object is added to the landing S3 bucket (Raw)
