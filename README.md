@@ -7,12 +7,13 @@
 4. [Environment Set Up](README.md#environment-setup)
 5. [Repository Structure](README.md#repository-structure)
 6. [Steps](README.md#steps)
-
+7. [Figures](README.md#figures)
+<!-- 8. [References](README.md#references) -->
 
 # Introduction
 **End-to-End Data Engineering Project using Kaggle YouTube Trending Dataset**
 
-This is a data engineering project simulating a request from a customer launching a new data-driven campaign with the main advertising channel: YouTube. The goal of this project is to help a Data Analyst answer the following questions:
+This is a data engineering project simulating a request from a customer launching a new data-driven campaign with the main advertising channel: YouTube. The goal of this project is to help our Analytics team answer the following questions:
 
 1. How do we categorize videos based on their comments and statistics?
 2. What factors affect how popular a YouTube video will be?
@@ -39,7 +40,7 @@ This is a data engineering project simulating a request from a customer launchin
 ## About our dataset
 - Top trending videos on YouTube
     - What is "Trending"?: YouTube uses factors, including users interactions (e.g., number ov views, shares, comments and likes). Not the most-viewed videos overall per calendar year.
-- Source: [Kaggle](https://www.kaggle.com/datasets/datasnaek/youtube-new). Data collected using YouTube API.
+- Source: [Kaggle](https://www.kaggle.com/datasets/datasnaek/youtube-new). Data collected using [YouTube API](https://developers.google.com/youtube/v3/getting-started).
 
 
 # Pipeline
@@ -82,6 +83,7 @@ WHERE id=2;
 * AWS Athena
 * AWS Glue 3.0 - Supports spark 3.1, Scala 2, Python 3
 * AWS Lambda
+* AWS Identity and Access Management (IAM)
 
 **Third-Party Libraries**
 * AWS CLI
@@ -97,7 +99,7 @@ WHERE id=2;
                 - source = name or indicator of source
                 - source_region = region of data source
         - In our case, the bucket name is: **deproject-on-youtube-raw-useast1-dev/**
-3.   . Copy the data to S3, using our AWS CLI
+3.   . Copy the data to S3, using our [AWS S3 CLI commands](bash/s3_cli_command.sh)
 
 
 # Repository Structure
@@ -120,7 +122,8 @@ WHERE id=2;
 5. Use Athena and [SQL](athena/test_query.sql) to query data
 6. Solve any errors during preprocessing
 7. Configure desired schema changes
-8. Write ETL job in [Lambda](lambda/lambda_function.py), and clean data    - Set target to cleansed S3 bucket (Cleansed / Enriched)
+8. Write ETL job in [Lambda](lambda/lambda_function.py), and clean data    
+    - Set target to cleansed S3 bucket (Cleansed / Enriched)
     - Add trigger to this function so that this runs when a new object is added to the landing S3 bucket (Raw)
 9. Query clean data on Athena
 10. Repeat steps 5 to 9, but for csv data (structured)
@@ -131,10 +134,19 @@ WHERE id=2;
 12. Use Athena and [SQL](athena/final_query.sql) to query final_analytics table
 13. *Connect to BI Tool of choice for visualizing data (To be continued)*
 
-<!-- # End result
+# Figures
 
+## Figure 1.0 - S3 Buckets <br />
 <img src="static/s3_buckets.png" alt="S3 Buckets" width="1000"/>
+
+## Figure 2.0 - IAM Roles <br />
 <img src="static/iam_roles.png" alt="IAM Roles" width="1000"/>
+
+## Figure 3.0 - Glue Crawlers <br />
 <img src="static/glue_crawlers.png" alt="Glue Crawlers" width="1000"/>
+
+## Figure 3.1 - Glue Tables <br />
 <img src="static/glue_tables.png" alt="Glue Tables" width="1000"/>
-<img src="static/athena_final_query.png" alt="Athena Query Screenshot" width="1000"/> -->
+
+## Figure 4.0 - Athena - Final Query <br />
+<img src="static/athena_final_query.png" alt="Athena Query Screenshot" width="1000"/>
