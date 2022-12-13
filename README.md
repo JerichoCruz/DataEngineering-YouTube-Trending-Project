@@ -4,8 +4,8 @@
 1. [Introduction](README.md#introduction)
 2. [Pipeline](README.md#pipeline)
 3. [Requirements](README.md#requirements)
-4. [Environment Set Up](README.md#environment%20setup)
-5. [Repository Structure](README.md#repository)
+4. [Environment Set Up](README.md#environment-setup)
+5. [Repository Structure](README.md#repository-structure)
 6. [Steps](README.md#steps)
 
 
