@@ -108,6 +108,8 @@ WHERE id=2;
 
 `./bash/` contains the CLI commands to copy files to S3 bucket
 
+`./data/` contains raw data from kaggle and sample output data from Athena
+
 `./glue/` contains the pyspark scripts to launch spark jobs using Glue
 
 `./lambda/` contains py scripts for the ETL job in Lambda
