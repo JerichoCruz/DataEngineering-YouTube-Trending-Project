@@ -1,5 +1,7 @@
 # DataEngineering-YouTube-Trending-Project
- 
+
+<img src="static/youtube_trending.png" alt="YouTube Trending" width="600"/>
+
 # Table of Contents 
 1. [Introduction](README.md#introduction)
 2. [Pipeline](README.md#pipeline)
