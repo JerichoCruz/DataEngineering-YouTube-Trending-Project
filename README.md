@@ -4,7 +4,7 @@
 
 # Table of Contents 
 1. [Introduction](README.md#introduction)
-2. [Pipeline](README.md#pipeline)
+2. [Project Architecture](README.md#project-architecture)
 3. [Requirements](README.md#requirements)
 4. [Environment Set Up](README.md#environment-setup)
 5. [Repository Structure](README.md#repository-structure)
@@ -15,7 +15,9 @@
 # Introduction
 **End-to-End Data Engineering Project using Kaggle YouTube Trending Dataset**
 
-This is a data engineering project simulating a request from a customer launching a new data-driven campaign with the main advertising channel: YouTube. The goal of this project is to help our Analytics team answer the following questions:
+This is a data engineering project simulating a request from a customer launching a new data-driven campaign with the main advertising channel: YouTube.
+
+The goal of this project is to help our Analytics team answer the following questions:
 
 1. How do we categorize videos based on their comments and statistics?
 2. What factors affect how popular a YouTube video will be?
@@ -41,17 +43,17 @@ This is a data engineering project simulating a request from a customer launchin
 
 ## About our dataset
 - Top trending videos on YouTube
-    - What is "Trending"?: YouTube uses factors, including users interactions (e.g., number ov views, shares, comments and likes). Not the most-viewed videos overall per calendar year.
-- Source: [Kaggle](https://www.kaggle.com/datasets/datasnaek/youtube-new). Data collected using [YouTube API](https://developers.google.com/youtube/v3/getting-started).
+    - What is "Trending"?: YouTube uses factors, including users interactions (e.g., number of views, shares, comments and likes). Not the most-viewed videos overall per calendar year.
+- Source: 
+    - [Kaggle](https://www.kaggle.com/datasets/datasnaek/youtube-new)
+    - Data collected using [Trending YouTube Scraper](https://github.com/mitchelljy/Trending-YouTube-Scraper) 
 
 
-# Pipeline
-
-## Data Architecture
+# Project Architecture
 <img src="static/pipeline.png" alt="Data Pipeline" width="1000"/>
 
 
-## Cleansed / Enriched  vs Reporting / Analytics Layer
+## __Cleansed / Enriched  vs. Reporting / Analytics Layer__
 The reason for building the Reporting / Analytics layer is to avoid joining large complex queries. We can combine data in the ETL pipeline and just give the final version of the table to the Data Analyst or Data Scientist. This makes things easier to quickly analyze the data and build machine learning models.
 
 Using Cleansed Layer
@@ -112,9 +114,11 @@ WHERE id=2;
 
 `./data/` contains raw data from kaggle and sample output data from Athena
 
-`./glue/` contains the pyspark scripts to launch spark jobs using Glue
+`./glue/` contains the spark scripts to launch spark jobs using Glue
 
 `./lambda/` contains py scripts for the ETL job in Lambda
+
+`./static/` contains images used for this project
 
 # Steps
 
