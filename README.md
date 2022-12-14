@@ -10,7 +10,7 @@
 5. [Repository Structure](README.md#repository-structure)
 6. [Steps](README.md#steps)
 7. [Figures](README.md#figures)
-<!-- 8. [References](README.md#references) -->
+8. [Acknowledgements](README.md#acknowledgements)
 
 # Introduction
 **End-to-End Data Engineering Project using Kaggle YouTube Trending Dataset**
@@ -158,3 +158,8 @@ WHERE id=2;
 
 ## Figure 4.0 - Athena - Final Query <br />
 <img src="static/athena_final_query.png" alt="Athena Query Screenshot" width="1000"/>
+
+# Acknowledgements
+Inspiration, code snippets, tutorials, etc.
+
+- [Darshil Parmar](https://youtu.be/yZKJFKu49Dk)
